@@ -1,0 +1,139 @@
+<?php
+
+?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!--[if IE]>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <![endif]-->
+    <title>Registration</title>
+    <!-- BOOTSTRAP CORE STYLE  -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FONT AWESOME ICONS  -->
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <!-- CUSTOM STYLE  -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+	
+     <!-- HTML5 Shiv and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script type="text/javascript">
+$(document).ready(function (e) {
+	$("#assessmentform").on('submit',(function(e) {
+		e.preventDefault();
+		$.ajax({
+        	url: "assessment.php",
+			type: "POST",
+			data:  new FormData(this),
+			contentType: false,
+    	    cache: false,
+			processData:false,
+			success: function(data)
+		    {
+			$("#targetLayer").html(data);
+		    },
+		  	error: function() 
+	    	{
+	    	} 	        
+	   });
+	}));
+});
+</script>
+</head>
+<body>
+    <section class="menu-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="navbar-collapse collapse ">
+						<ul id="menu-top" class="nav navbar-nav navbar-left">
+							<div class="media">
+							</div>	
+						</ul>
+                        <ul id="menu-top" class="nav navbar-nav navbar-right">
+							<li><a href="index.php">Welcome</a></li>
+                            <li><a href="course.php">Courses</a></li>
+                            <li><a href="login.php">Login</a></li> 
+							<li><a class="menu-top-active" href="registration.php">Registration</a></li> 
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- MENU SECTION END-->
+   <div class="content-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 style="color:blue" class="page-head-line">Register </h1>
+                </div>
+            </div>
+            <div class="row">
+				<div class="col-md-6">
+					<div class="panel panel-default" >
+						<div class="panel-heading">
+							Registration Form
+						</div>
+						<div class="panel-body">
+							<form id="assessmentform" action="assessment.php"  enctype="multipart/form-data" method="post" role="form">
+								<div class="form-group">
+									<label for="PI_name">PI Assessment Name</label>
+									<input type="text" class="form-control" id="name" name="name" placeholder="Enter PI Assessment Name" required/>
+								</div>
+								<div class="form-group">
+									<label for="PI Student">PI Student</label>
+									<input type="text" class="form-control" id="pi_stu" name="pi_stu" placeholder="Enter PI student" required/>
+								</div>
+								<div class="form-group">
+									<label for="Assessment_date">Assessment Date</label>
+									<input type="text" class="form-control" id="assess_date" name="assess_date" placeholder="Enter Date" required/>
+								</div>
+								<div class="form-group">
+									<label for="theory_marks">Theory Marks</label>
+									<input type="number" class="form-control" id="theory_marks" name="theory_marks" placeholder="theory_marks" required/>
+								</div>
+								<div class="form-group">
+                                    <label for="oral_marks">oral Marks</label>
+                                    <input type="number" class="form-control" id="oral_marks" name="oral_marks" placeholder="oral_marks" required/>
+                                </div>
+									<p class="help-block">Example .jpg |.png |.tif |.gif;</p>
+								</div>
+								<input name="submit" value="Submit" type="submit" class="btn btn-default">
+								<div style="color:red" id="targetLayer"></div>
+								<span style="color:red"><?php echo $error; ?></span>
+							</form>
+																					
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+    <!--REGISTRATION SECTION END-->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    &copy; 2015 J.P.MORGAN | By : BANGALORE-TEAM8
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- FOOTER SECTION END-->
+    <!-- JAVASCRIPT AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
+    <!-- CORE JQUERY SCRIPTS -->
+    <script src="assets/js/jquery-1.11.1.js"></script>
+    <!-- BOOTSTRAP SCRIPTS  -->
+    <script src="assets/js/bootstrap.js"></script>
+</body>
+</html>				
