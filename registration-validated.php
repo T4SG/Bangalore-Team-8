@@ -49,13 +49,22 @@ $(document).ready(function (e) {
 });
 p1=document.getElementById("password1");
 p2=document.getElementById("password2");
-if(!(p1.innerHTML==p2.innerHTML))
-{
-    alert("Passwords don't match");
-    p1.innerHTML="";
-    p2.innerHTML="";
-    p1.focus();
-}
+
+function onblurcpwd()
+       {
+           flag = 0;
+           if(p1.value == "" || p2.value == "")
+            { alert("Sorry, one or more password fields are empty.");  flag = 1;}
+           else if(p1.value != p2.value)
+           {  alert("Sorry, the two passwords are not same."); flag = 1; }
+           if(flag == 1)
+           {
+              p1.value = "";
+              p2.value = "";
+              p1.focus();
+           }
+       
+       }
 name=document.getElementById("name");
 var letters ="/^[A-Za-z]+$/";  
       if(!(name.innerHTML.match(letters)) && name.innerHTML!=null)  
@@ -118,7 +127,7 @@ var letters ="/^[A-Za-z]+$/";
 								</div>
 								<div class="form-group">
 									<label for="exampleInputpassword2">Confirm Password</label>
-									<input type="password" class="form-control" id="password2" name="password2" placeholder="Re-Enter Password" required/>
+									<input type="password" class="form-control" id="password2"  name="password2" placeholder="Re-Enter Password" onblur="onblurcpwd" required/>
 								</div>
 								<div class="form-group">
 									<label for="exampleInputFile">Image input</label>
