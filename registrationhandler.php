@@ -66,7 +66,7 @@
 	
 	mysql_query("INSERT into registration(name,email,password,image) VALUES ('$name','$email','$password1','".$target_path."')",$connection);
 	
-	
+	echo "Hi";
 	
 	ob_start();
 
