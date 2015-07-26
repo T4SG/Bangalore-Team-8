@@ -1,15 +1,15 @@
 	<?php
 	
-
+	echo"Hi";
 	session_start(); // Starting Session
 	$error=''; // Variable To Store Error Message
 	if (isset($_POST['submit'])) {
-	if (empty($_POST['name']) || empty($_POST['email']) || empty($_POST['password1']) || empty($_POST['password2']) ||  empty($_FILES["uploadedimage"]["name"])) {
+	if (empty($_POST['name']) || empty($_POST['email']) || empty($_POST['password1']) || empty($_POST['password2'])) {
 	$error = "Some fields are empty";
-	if(empty($_FILES["uploadedimage"]["name"]))
-	{
-		$error = "hello image is empty";
-	}
+	//if(empty($_FILES["uploadedimage"]["name"]))
+	//{
+	//	$error = "hello image is empty";
+	//}
 }
 	else
 	{
@@ -30,9 +30,8 @@
 	$password1 =mysql_real_escape_string($password1);
 	$password2 =mysql_real_escape_string($password2);// don't actually need this
 	$db = mysql_select_db("mysql", $connection);
-	$sql=mysql_query("SELECT from registration where email='$email'",$connection);
-	$row=mysql_num_rows($sql);
-	if($row!=1)
+/* $sql=mysql_query("SELECT from registration where email='$email'",$connection);
+ if($row!=1)
 	{
 		echo $row;
 	function GetImageExtension($imagetype)
@@ -62,24 +61,24 @@
 	
 	if(move_uploaded_file($temp_name, $target_path)) {
 	
+*/	
 	
-	
-	mysql_query("INSERT into registration(name,email,password,image) VALUES ('$name','$email','$password1','".$target_path."')",$connection);
+	mysql_query("INSERT into registration(name,email,password) VALUES ('$name','$email','$password1')",$connection);
 	
 	echo "Hi";
 	
 	ob_start();
 
-	 echo '<META HTTP-EQUIV="Refresh" Content="0; URL=login.php">';
+	 //echo '<META HTTP-EQUIV="Refresh" Content="0; URL=login.php">';
 	ob_end_flush();	
 	echo "hello";
-	}else{
+	}/*else{
 	
 	exit("Error While uploading image on the server");
 	} 
 	
 	}
-	
+	*/
 	// Selecting Database
 	
 	mysql_close($connection); // Closing Connection
