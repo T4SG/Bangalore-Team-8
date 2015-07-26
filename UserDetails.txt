@@ -1,0 +1,24 @@
+Message to be sent to the number.. 9243422233
+
+format: 8790687180 <message>
+
+
+Database Structure:
+
+Name  Phone Number   Status
+
+
+Status:
+1)Not yet contacted
+2)Contacted.Not interested
+3)Contacted.Interested
+4)Registered
+
+
+Status to be modified by the Admin ONLY
+(using a dropdown list after each updation)
+
+
+Exotel 
+email: meghanareddy95@yahoo.com
+Pass: meghana
