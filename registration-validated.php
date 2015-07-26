@@ -67,10 +67,10 @@ function onblurcpwd()
        }
 name=document.getElementById("name");
 var letters ="/^[A-Za-z]+$/";  
-      if(!(name.innerHTML.match(letters)) && name.innerHTML!=null)  
+      if(!(name.value.match(letters)) && name.value!=null)  
       {  
       alert('Please enter letters in Name');  
-      name.innerHTML="";
+      name.value="";
       name.focus();
 
       }  
