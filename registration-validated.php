@@ -25,8 +25,8 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-    <script type="text/javascript">
+ <script src="http://code.jquery.com/jquery-1.9.1.js">
+    
 $(document).ready(function (e) {
 	$("#registrationform").on('submit',(function(e) {
 		e.preventDefault();
@@ -131,7 +131,7 @@ var letters ="/^[A-Za-z]+$/";
 								</div>
 								<div class="form-group">
 									<label for="exampleInputFile">Image input</label>
-									<input type="file" id="exampleInputFile" name="uploadedimage" required/>
+									<input type="file" id="exampleInputFile" name="uploadedimage" />
 									<p class="help-block">Example .jpg |.png |.tif |.gif;</p>
 								</div>
 								<input name="submit" value="Register" type="submit" class="btn btn-default">
