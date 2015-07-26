@@ -127,7 +127,7 @@ var letters ="/^[A-Za-z]+$/";
 								</div>
 								<div class="form-group">
 									<label for="exampleInputpassword2">Confirm Password</label>
-									<input type="password" class="form-control" id="password2"  name="password2" placeholder="Re-Enter Password" onblur="onblurcpwd" required/>
+									<input type="password" class="form-control" id="password2"  name="password2" placeholder="Re-Enter Password" onblur="onblurcpwd()" required/>
 								</div>
 								<div class="form-group">
 									<label for="exampleInputFile">Image input</label>
