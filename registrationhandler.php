@@ -24,13 +24,13 @@
 	$name = stripslashes($name);
 	$email= stripslashes($email);
 	$password1 = stripslashes($password1);
-	$password2 = stripslashes($password2);
+	$password2 = stripslashes($password2); // don't actually need this
 	$name = mysql_real_escape_string($name);
 	$email= mysql_real_escape_string($email);
 	$password1 =mysql_real_escape_string($password1);
-	$password2 =mysql_real_escape_string($password2);
+	$password2 =mysql_real_escape_string($password2);// don't actually need this
 	$db = mysql_select_db("mysql", $connection);
-	$sql=mysql_query("select * from registration where email='$email'",$connection);
+	$sql=mysql_query("SELECT from registration where email='$email'",$connection);
 	$row=mysql_num_rows($sql);
 	if($row!=1)
 	{
@@ -64,7 +64,7 @@
 	
 	
 	
-	mysql_query("insert into registration values('$name','$email','$password1','".$target_path."')",$connection);
+	mysql_query("INSERT into registration(name,email,password,image) VALUES ('$name','$email','$password1','".$target_path."')",$connection);
 	
 	
 	
