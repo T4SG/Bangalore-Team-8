@@ -14,23 +14,13 @@ if(isset($_SESSION['login_user']))
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <!--[if IE]>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <![endif]-->
-    <title>Login/Register</title>
+    <title>Login</title>
     <!-- BOOTSTRAP CORE STYLE  -->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONT AWESOME ICONS  -->
     <link href="assets/css/font-awesome.css" rel="stylesheet" />
     <!-- CUSTOM STYLE  -->
     <link href="assets/css/style.css" rel="stylesheet" />
-	
-     <!-- HTML5 Shiv and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 </head>
 <body>
     <section class="menu-section">
@@ -40,9 +30,6 @@ if(isset($_SESSION['login_user']))
                     <div class="navbar-collapse collapse ">
 						<ul id="menu-top" class="nav navbar-nav navbar-left">
 							<div class="media">
-                               <a class="media-left" href="#">
-                                    <img src="logo-tab.jpg" class="img-thumbnail" alt="logo" width="120" height="20">
-                               </a>
 							</div>	
 						</ul>
                         <ul id="menu-top" class="nav navbar-nav navbar-right">
@@ -50,30 +37,6 @@ if(isset($_SESSION['login_user']))
                             <li><a href="course.php">Courses</a></li>
                             <li><a class="menu-top-active" href="login.php">Login</a></li> 
 							<li><a href="registration.php">Registration</a></li> 
-							<!--<li class="dropdown">
-								<a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
-									<span class="glyphicon glyphicon-user" style="font-size: 15px;"></span>
-								</a>
-								<div class="dropdown-menu dropdown-settings">
-                                <div class="media">
-                                    <a class="media-left" href="#">
-                                        <img src="assets/img/64-64.jpg" alt="" class="img-rounded" />
-                                    </a>
-                                    <div class="media-body">
-                                        <h4 class="media-heading">Jhon Deo Alex </h4>
-                                        <h5>Developer & Designer</h5>
-
-                                    </div>
-                                </div>
-                                <hr />
-                                <h5><strong>Personal Bio : </strong></h5>
-                                Anim pariatur cliche reprehen derit.
-                                <hr />
-                                <a href="#" class="btn btn-info btn-sm">Full Profile</a>&nbsp; <a href="index.html" class="btn btn-danger btn-sm">Logout</a>
-
-								</div>
-							</li>-->
-
                         </ul>
                     </div>
                 </div>
@@ -86,14 +49,14 @@ if(isset($_SESSION['login_user']))
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="page-head-line">Login</h1>
+                    <h1 style="color:blue" class="page-head-line">Login</h1>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6">
 					<div class="panel panel-default">
                         <div class="panel-heading">
-                           Login
+                           Login Form
                         </div>
                         <div class="panel-body">
 							<form action="" method="post" >
@@ -110,16 +73,10 @@ if(isset($_SESSION['login_user']))
 									<br><span style="color:red";><?php echo $error; ?></span>
 							</form>
 									<br><a href="forgot_password.php">Forgot password....?</a>
-									<!--<button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Forgot password</button>-->
-							
-	
 								</div>								
-									
-								<!--</div>-->
 							</div>
 					</div>
 				</div>
-				
 			</div>
 		</div>
     </div>
@@ -128,9 +85,8 @@ if(isset($_SESSION['login_user']))
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    &copy; 2015 MSIT | By : SDVDR
+                    &copy; 2015 J.P.MORGAN | By : BANGALORE-TEAM8
                 </div>
-
             </div>
         </div>
     </footer>
